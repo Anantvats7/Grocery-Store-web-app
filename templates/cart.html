@@ -1,0 +1,109 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Cart</title>
+</head>
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <style>
+        body {
+            background-color: #f1f1f1;
+        }
+
+    
+
+        .navbar {
+            background-color: #f69b08; 
+        }
+
+        .navbar-brand, .navbar-nav .nav-link {
+            color: #08e1d3; 
+        }
+
+        .navbar-brand:hover, .navbar-nav .nav-link:hover {
+            color: #4ece0f; 
+        }
+
+        .container {
+            background-color: #c9dcee; 
+            padding: 20px;
+            border-radius: 5px;
+            margin-top: 20px;
+        }
+
+        h1 {
+            color: #f39c12; 
+        }
+        h5{
+            color:darkred;
+        }
+    </style>
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-light">
+            <a class="navbar-brand" >
+                <img src="https://wallpapercave.com/wp/wp7566451.jpg" alt="Shopping Image" width="80" height="50" >
+                <a><b><h4>Grocery store</b></a></a></h4>
+            </a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+          <ul class="navbar-nav ml-auto">
+            <li class="nav-item active">
+              <a class="nav-link" href="{{ url_for('display_products_by_category') }}">Home</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="{{ url_for('user_logout') }}">Logout</a>
+            </li>
+          </ul>
+        </div>
+    </nav>
+    <div class="container mt-4">
+    <h1>Your Cart</h1>
+
+    {% if products_in_cart %}
+    <table>
+        <tr>
+            <th> Product Name </th>
+            <th> Quantity </th>
+            <th> Price per Unit </th>
+            <th> Total Price </th>
+        </tr>
+        {% for product, quantity in products_in_cart %}
+        <tr>
+            <td>{{ product.name }}</td>
+            <td>{{ quantity }}</td>
+            <td>&#8377;{{ product.rate_per_unit }}</td>
+            <td>&#8377;{{ product.rate_per_unit * quantity }}</td>
+        </tr>
+        {% endfor %}
+        <tr>
+            <td colspan="3">Total Amount: </td>
+            <td>&#8377;{{ total_amount }}</td>
+        </tr>
+    </table>
+
+    {% else %}
+    <p>Your cart is empty.</p>
+    {% endif %}
+
+
+  <div class="container">
+    <div class="row">
+        <div class="col-md-6">
+            <form method="post" action="{{ url_for('buy_products') }}">
+                <input type="submit" value="Buy" class="btn btn-success btn-block">
+            </form>
+        </div>
+        <div class="col-md-6 mt-3 mt-md-0">
+            <form method="post" action="{{ url_for('clear_products') }}">
+                <input type="submit" value="Clear" class="btn btn-danger btn-block">
+            </form>
+        </div>
+    </div>
+</div>
+
+</body>
+</html>

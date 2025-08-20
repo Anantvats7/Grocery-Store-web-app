@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Edit Product</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <style>
+        body {
+            background-color: #f1f1f1;
+        }
+
+    
+
+        .navbar {
+            background-color: #f69b08; 
+        }
+
+        .navbar-brand, .navbar-nav .nav-link {
+            color: #08e1d3; 
+        }
+
+        .navbar-brand:hover, .navbar-nav .nav-link:hover {
+            color: #4ece0f; 
+        }
+
+        .container {
+            background-color: #c9dcee; 
+            padding: 20px;
+            border-radius: 5px;
+            margin-top: 20px;
+        }
+
+        h1 {
+            color: #f39c12; 
+        }
+        h5{
+            color:darkred;
+        }
+    </style>
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-light">
+            <a class="navbar-brand" >
+                <img src="https://wallpapercave.com/wp/wp7566451.jpg" alt="Shopping Image" width="80" height="50" >
+                <a><b><h4>Grocery store</b></a></a></h4>
+            </a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+          <ul class="navbar-nav ml-auto">
+            <li class="nav-item active">
+              <a class="nav-link" href="{{ url_for('admin_dashboard') }}">Dashboard</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="{{ url_for('admin_logout') }}">Logout</a>
+            </li>
+          </ul>
+        </div>
+    </nav>
+
+    <div class="container mt-4">
+    <h1>Edit Product</h1>
+    <form method="post" action="{{ url_for('edit_product', product_id=product.id) }}">
+        <label for="name">Name:</label>
+        <input type="text" id="name" name="name" value="{{ product.name }}" required><br>
+
+        <label for="price">Price (Rate per Unit):</label>
+        <input type="number" step="0.01" id="price" name="price" value="{{ product.rate_per_unit }}" required><br>
+
+        <label for="quantity">Available Quantity:</label>
+        <input type="number" id="quantity" name="quantity" value="{{ product.quantity }}" required><br>
+
+        <label for="manufacture_date">Manufacture Date:</label>
+        <input type="datetime-local" id="manufacture_date" name="manufacture_date" value="{{ product.manufacture_date.isoformat() }}" required><br>
+
+        <label for="expiry_date">Expiry Date:</label>
+        <input type="datetime-local" id="expiry_date" name="expiry_date" value="{{ product.expiry_date.isoformat() }}" required><br>
+
+        <!--  dropdown -->
+        <label for="section">Section:</label>
+        <select id="section" name="section">
+            {% for section in sections %}
+                <option value="{{ section.id }}" {% if product.section_id == section.id %}selected{% endif %}>{{ section.name }} - {{ section.type }}</option>
+            {% endfor %}
+        </select><br>
+
+        
+
+        <input type="submit" value="Save" class="btn btn-dark btn-lg btn-block">
+    </form>
+
+</div>
+</body>
+</html>
+

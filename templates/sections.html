@@ -1,0 +1,137 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Sections and Products</title>
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <style>
+        body {
+            background-color: #f1f1f1;
+        }
+
+    
+
+        .navbar {
+            background-color: #f69b08; 
+        }
+
+        .navbar-brand, .navbar-nav .nav-link {
+            color: #08e1d3; 
+        }
+
+        .navbar-brand:hover, .navbar-nav .nav-link:hover {
+            color: #4ece0f; 
+        }
+
+        .container {
+            background-color: #c9dcee; 
+            padding: 20px;
+            border-radius: 5px;
+            margin-top: 20px;
+        }
+
+        h1 {
+            color: #f39c12; 
+        }
+        h5{
+            color:darkred;
+        }
+    </style>
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-light">
+            <a class="navbar-brand" >
+                <img src="https://wallpapercave.com/wp/wp7566451.jpg" alt="Shopping Image" width="80" height="50" >
+                <a><b><h4>Grocery store</b></a></a></h4>
+            </a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+          <ul class="navbar-nav ml-auto">
+            <li class="nav-item active">
+              <a class="nav-link" href="{{ url_for('view_cart') }}">Cart</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="{{ url_for('user_logout') }}">Logout</a>
+            </li>
+          </ul>
+        </div>
+    </nav>
+
+    <div class="container mt-4">
+        <h1>Welcome, {{ user.username }}!</h1>
+        <h2>Sections and Products</h2>
+        <div class="row mb-3">
+            <div class="col-md-6">
+                <form method="post" action="{{ url_for('search_sections') }}" class="form-inline">
+                    <label for="search_query" class="mr-2">Search Section:</label>
+                    <input type="text" id="search_query" name="search_query" required class="form-control mr-2">
+                    <button type="submit" class="btn btn-primary">Search</button>
+                </form>
+            </div>
+            <div class="col-md-6">
+          <form method="post" action="{{ url_for('search_products') }}" class="form-inline">
+    <div class="form-group">
+        <label for="name" class="mr-2">Product Name:</label>
+        <input type="text" id="name" name="name" class="form-control mr-2">
+    </div>
+
+    <div class="form-group">
+        <label for="price" class="mr-2">Price:</label>
+        <input type="number" id="price" name="price" step="0.01" class="form-control mr-2">
+    </div>
+
+    <div class="form-group">
+        <label for="quantity" class="mr-2">Quantity:</label>
+        <input type="number" id="quantity" name="quantity" class="form-control mr-2">
+    </div>
+
+    <div class="form-group">
+        <label for="manufacture_date" class="mr-2">Manufacture Date:</label>
+        <input type="date" id="manufacture_date" name="manufacture_date" class="form-control mr-2">
+    </div>
+
+    <div class="form-group">
+        <label for="expiry_date" class="mr-2">Expiry Date:</label>
+        <input type="date" id="expiry_date" name="expiry_date" class="form-control mr-2">
+    </div>
+
+    <button type="submit" class="btn btn-primary">Search</button>
+
+</form>
+            </div>
+        </div>
+    
+
+        {% for section in sections %}
+            <h2>{{ section.name }} - {{ section.section_type }}</h2>
+            {% if section.products %}
+                <ul>
+                    {% for product in section.products %}
+                        <li>
+                            {{ product.name }} - Price:  &#8377;{{ product.rate_per_unit }} - Available Quantity: {{ product.quantity }}
+                            {% if product.quantity > 0 %}
+                                <form method="post" action="{{ url_for('add_to_cart', product_id=product.id) }}" class="form-inline">
+                                    <label for="quantity" class="mr-2">Quantity:</label>
+                                    <input type="number" id="quantity" name="quantity" value="1" min="1" max="{{ product.quantity }}" required class="form-control mr-2">
+                                    <button type="submit" class="btn btn-success">Add to Cart</button>
+                                </form>
+                            {% else %}
+                                <p><h5>Out of Stock</h5></p>
+                            {% endif %}
+                        </li>
+                    {% endfor %}
+                </ul>
+            {% else %}
+                <p><h5>No products available in this section.</h5></p>
+            {% endif %}
+        {% endfor %}
+    
+    </div>
+
+
+
+</body>
+</html>
