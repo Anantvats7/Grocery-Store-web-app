@@ -73,23 +73,23 @@ System automatically shows the latest products added.
 
   Clone the repository
 
-    git clone <your-repo-url>
-    cd grocery-store
+      git clone <your-repo-url>
+      cd grocery-store
 
 
   Create and activate a virtual environment
 
-    python3 -m venv venv3
-    source venv3/bin/activate
+      python3 -m venv venv3
+      source venv3/bin/activate
 
 
   Install dependencies
 
-    pip install -r requirements.txt
+      pip install -r requirements.txt
 
 
   Run the application
 
-    python main.py
+      python main.py
 
   Visit `http://localhost:5000` in your web browser.
