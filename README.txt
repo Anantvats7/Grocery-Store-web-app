@@ -6,7 +6,7 @@
 🚀 Features
   👤 User
 
-    Sign up and login (RBAC enforced).
+    Sign up and login.
     
     Browse categories/sections.
     
@@ -28,7 +28,7 @@
 
   🛠️ Admin
 
-    Login (RBAC enforced, mandatory).
+    Login.
     
     Manage Categories/Sections:
     
