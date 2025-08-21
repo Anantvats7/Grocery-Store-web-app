@@ -7,57 +7,57 @@
 
 👤 User
 
-Sign up and login.
+ Sign up and login.
 
-	Browse categories/sections.
+ Browse categories/sections.
 	
-	Search products by:
+ Search products by:
 	
-	Category
+ Category
 	
-	Price
+ Price
 	
-	Manufacture/Expiry date
+ Manufacture/Expiry date
 	
-	Add multiple products to a shopping cart.
+ Add multiple products to a shopping cart.
 	
-	Buy products from one or multiple categories.
+ Buy products from one or multiple categories.
 	
-	See out of stock status for unavailable products.
+ See out of stock status for unavailable products.
 	
-	View the total amount payable before checkout.
+ View the total amount payable before checkout.
 
 🛠️ Admin
 
  Login.
 
-	Manage Categories/Sections:
+ Manage Categories/Sections:
 
-	Create, Edit, Delete categories.
+ Create, Edit, Delete categories.
 
-	Categories stored in UTF-8 encoding to support multiple languages.
+ Categories stored in UTF-8 encoding to support multiple languages.
 
-	Manage Products:
+ Manage Products:
 
-		Add new products with details:
+ Add new products with details:
 
-			ID, Name, Manufacture Date, Expiry Date, Price per Unit (₹/Kg, ₹/Litre,etc.)
+ ID, Name, Manufacture Date, Expiry Date, Price per Unit (₹/Kg, ₹/Litre,etc.)
 
-		Edit product details (title, description, category).
+ Edit product details (title, description, category).
 
-		Remove products (with confirmation).
+ Remove products (with confirmation).
 
-	Assign categories to products.
+ Assign categories to products.
 
-	System automatically shows the latest products added.
+ System automatically shows the latest products added.
 
 📖 Terminology
 
-Inventory → Complete list of all products.
+ Inventory → Complete list of all products.
 
-Section/Category → A group of products (e.g., Vegetables, Dairy, Snacks).
+ Section/Category → A group of products (e.g., Vegetables, Dairy, Snacks).
 
-Product → Individual item with name, price, expiry date, etc.
+ Product → Individual item with name, price, expiry date, etc.
 
 🖥️ Technology Stack
 
