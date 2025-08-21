@@ -29,7 +29,7 @@ Sign up and login.
 
 🛠️ Admin
 
-	Login.
+ Login.
 
 	Manage Categories/Sections:
 
@@ -53,11 +53,11 @@ Sign up and login.
 
 📖 Terminology
 
-	Inventory → Complete list of all products.
+Inventory → Complete list of all products.
 
-	Section/Category → A group of products (e.g., Vegetables, Dairy, Snacks).
+Section/Category → A group of products (e.g., Vegetables, Dairy, Snacks).
 
-	Product → Individual item with name, price, expiry date, etc.
+Product → Individual item with name, price, expiry date, etc.
 
 🖥️ Technology Stack
 
