@@ -1,13 +1,13 @@
 🛒 Grocery Store Application
-
-A multi-user grocery store management system.
-It allows users to buy groceries from multiple categories and an admin to manage 		categories and products.
+ 
+ A multi-user grocery store management system.
+ It allows users to buy groceries from multiple categories and an admin to manage 		categories and products.
 
 🚀 Features
 
 👤 User
 
-	Sign up and login.
+Sign up and login.
 
 	Browse categories/sections.
 	
