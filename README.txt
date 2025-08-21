@@ -92,4 +92,4 @@ Run the application
 
 python main.py
 
-
+Visit `http://localhost:5000` in your web browser.
