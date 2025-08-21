@@ -70,7 +70,7 @@ System automatically shows the latest products added.
     Templating → Jinja2
 
 ⚙️ Installation & Setup
-
+```bash
   Clone the repository
 
       git clone <your-repo-url>
