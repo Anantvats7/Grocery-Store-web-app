@@ -93,3 +93,23 @@
 		python main.py
 
 	Visit `http://localhost:5000` in your web browser.
+
+## Installation
+
+Run the following commands:
+
+```bash
+# Clone the repository
+git clone https://github.com/username/repo.git
+cd repo
+
+# Create virtual environment
+python3 -m venv venv3
+source venv3/bin/activate
+
+# Install dependencies
+pip install -r requirements.txt
+
+# Run the app
+python main.py
+
