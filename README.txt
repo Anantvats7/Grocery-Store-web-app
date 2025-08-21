@@ -70,26 +70,26 @@ UI → Bootstrap
 Templating → Jinja2
 
 ⚙️ Installation & Setup
+```bash
+#Clone the repository
 
-Clone the repository
-
-git clone <your-repo-url>
-cd grocery-store
-
-
-Create and activate a virtual environment
-
-python3 -m venv venv3
-source venv3/bin/activate
+	git clone <your-repo-url>
+	cd reponame
 
 
-Install dependencies
+#Create and activate a virtual environment
 
-pip install -r requirements.txt
+	python3 -m venv venv3
+	source venv3/bin/activate
 
 
-Run the application
+#Install dependencies
 
-python main.py
+	pip install -r requirements.txt
+
+
+#Run the application
+
+	python main.py
 
 Visit `http://localhost:5000` in your web browser.
