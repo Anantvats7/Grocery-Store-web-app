@@ -4,52 +4,51 @@
   It allows users to buy groceries from multiple categories and an admin to manage categories and products.
 
 🚀 Features
+  👤 User
 
-👤 User
+    Sign up and login (RBAC enforced).
+    
+    Browse categories/sections.
+    
+    Search products by:
+    
+    Category
+    
+    Price
+    
+    Manufacture/Expiry date
+    
+    Add multiple products to a shopping cart.
+    
+    Buy products from one or multiple categories.
+    
+    See out of stock status for unavailable products.
+    
+    View the total amount payable before checkout.
 
-  Sign up and login.
-  
-  Browse categories/sections.
-  
-  Search products by:
-  
-  Category
-  
-  Price
-  
-  Manufacture/Expiry date
-  
-  Add multiple products to a shopping cart.
-  
-  Buy products from one or multiple categories.
-  
-  See out of stock status for unavailable products.
-  
-  View the total amount payable before checkout.
+  🛠️ Admin
 
-🛠️ Admin
-
-  Login.
-  
-  Manage Categories/Sections:
-  
-  Create, Edit, Delete categories.
-  
-  Categories stored in UTF-8 encoding to support multiple languages.
-  
-  Manage Products:
-  
-  Add new products with details:
-  
-  ID, Name, Manufacture Date, Expiry Date, Price per Unit (₹/Kg, ₹/Litre, etc.)
-  
-  Edit product details (title, description, category).
-  
-  Remove products (with confirmation).
-  
-  Assign categories to products.
-
-System automatically shows the latest products added.
+    Login (RBAC enforced, mandatory).
+    
+    Manage Categories/Sections:
+    
+    Create, Edit, Delete categories.
+    
+    Categories stored in UTF-8 encoding to support multiple languages.
+    
+    Manage Products:
+    
+    Add new products with details:
+    
+    ID, Name, Manufacture Date, Expiry Date, Price per Unit (₹/Kg, ₹/Litre, etc.)
+    
+    Edit product details (title, description, category, image).
+    
+    Remove products (with confirmation).
+    
+    Assign categories to products.
+    
+    System automatically shows the latest products added.
 
 📖 Terminology
 
@@ -61,36 +60,37 @@ System automatically shows the latest products added.
 
 🖥️ Technology Stack
 
-    Backend → Flask (Python)
-    
-    Database → SQLite
-    
-    UI → Bootstrap
-    
-    Templating → Jinja2
+  Backend → Flask (Python)
+  
+  Database → SQLite
+  
+  UI → Bootstrap
+  
+  Templating → Jinja2
 
 ⚙️ Installation & Setup
-'''
-  #Clone the repository
 
-      git clone <your-repo-url>
-      cd grocery-store
+  Clone the repository
 
-
-  #Create and activate a virtual environment
-
-      python3 -m venv venv3
-      source venv3/bin/activate
+    git clone <your-repo-url>
+    cd grocery-store
 
 
-  #Install dependencies
+  Create and activate a virtual environment
 
-      pip install -r requirements.txt
+    python3 -m venv venv3
+    source venv3/bin/activate
 
 
-  #Run the application
+  Install dependencies
 
-      python main.py
+    pip install -r requirements.txt
+
+
+  Run the application
+
+  python main.py
+
 
   Visit `http://localhost:5000` in your web browser.
-'''
+
