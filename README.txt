@@ -70,26 +70,27 @@ System automatically shows the latest products added.
     Templating → Jinja2
 
 ⚙️ Installation & Setup
-```bash
-  Clone the repository
+'''
+  #Clone the repository
 
       git clone <your-repo-url>
       cd grocery-store
 
 
-  Create and activate a virtual environment
+  #Create and activate a virtual environment
 
       python3 -m venv venv3
       source venv3/bin/activate
 
 
-  Install dependencies
+  #Install dependencies
 
       pip install -r requirements.txt
 
 
-  Run the application
+  #Run the application
 
       python main.py
 
   Visit `http://localhost:5000` in your web browser.
+'''
